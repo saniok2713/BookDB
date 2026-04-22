@@ -14,28 +14,43 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="10">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Nome:"></Label>
-                <TextBox Width="152" Height="20"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Autore:"></Label>
-                <TextBox Width="152" Height="20"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Anno:"></Label>
-                <TextBox Width="152" Height="20"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Pagine:"></Label>
-                <TextBox Width="152" Height="20"></TextBox>
-            </StackPanel>
-
+            <Grid Margin="0.5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Nome:" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Width="150" Height="20"/>
+            </Grid>
+            <Grid Margin="0.5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Autore:" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Width="150" Height="20"/>
+            </Grid>
+            <Grid Margin="0.5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Anno:" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Width="150" Height="20"/>
+            </Grid>
+            <Grid Margin="0.5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Pagine:" Grid.Column="0"/>
+                <TextBox Grid.Column="1" Width="150" Height="20"/>
+            </Grid>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Margin="10">
             <ListBox>
-                <ListBoxItem Content="Elemento 1"/>
+                <ListBoxItem Content="Il gioco interiore nel tennis 192 pagine"/>
                 <ListBoxItem Content="Elemento 2"/>
                 <ListBoxItem Content="Elemento 3"/>
             </ListBox>
