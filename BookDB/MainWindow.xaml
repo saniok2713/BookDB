@@ -7,74 +7,84 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <Grid >
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Margin="10">
-            <Grid Margin="0.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Nome:" Grid.Column="0"/>
-                <TextBox Grid.Column="1" Width="150" Height="20"/>
-            </Grid>
-            <Grid Margin="0.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Autore:" Grid.Column="0"/>
-                <TextBox Grid.Column="1" Width="150" Height="20"/>
-            </Grid>
-            <Grid Margin="0.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Anno:" Grid.Column="0"/>
-                <TextBox Grid.Column="1" Width="150" Height="20"/>
-            </Grid>
-            <Grid Margin="0.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Pagine:" Grid.Column="0"/>
-                <TextBox Grid.Column="1" Width="150" Height="20"/>
-            </Grid>
-            <Grid Margin="0.5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Lingua:" Grid.Column="0"/>
-                <TextBox Grid.Column="1" Width="150" Height="20"/>
-            </Grid>
-
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="80"/>
-                    <ColumnDefinition Width="80"/>
-                </Grid.ColumnDefinitions>
-                <Button Content="Add" Grid.Column="0" Margin="2"/>
-                <Button Content="Delete" Grid.Column="1" Margin="2"/>
-                <Button Content="Update" Grid.Column="2" Margin="2"/>
-            </Grid>
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0">
+                <Grid Margin="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Titolo:" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                </Grid>
+                <Grid Margin="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Autore:" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                </Grid>
+                <Grid Margin="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Anno:" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                </Grid>
+                <Grid Margin="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Pagine:" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                </Grid>
+                <Grid Margin="0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Lingua:" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                </Grid>
+            </StackPanel>
 
             
-        </StackPanel>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Add" Grid.Column="0" Margin="2" Click="AddBook"/>
+                    <Button Content="Delete" Grid.Column="1" Margin="2" Click="DeleteBook"/>
+                    <Button Content="Update" Grid.Column="2" Margin="2" Click="UpdateBook"/>
+                </Grid>
+            </Grid>
 
         <StackPanel Grid.Column="1" Margin="10">
-            <ListBox>
-                <ListBoxItem Content="Il gioco interiore nel tennis 192 pagine"/>
-                <ListBoxItem Content="Elemento 2"/>
-                <ListBoxItem Content="Elemento 3"/>
-            </ListBox>
+            <DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Titolo" Binding="{Binding Nome}" Width="*"/>
+                    <DataGridTextColumn Header="Autore" Binding="{Binding Autore}" Width="*"/>
+                    <DataGridTextColumn Header="Anno" Binding="{Binding Anno}" Width="80"/>
+                    <DataGridTextColumn Header="Pagine" Binding="{Binding Pagine}" Width="80"/>
+                    <DataGridTextColumn Header="Lingua" Binding="{Binding Lingua}" Width="100"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
 
 

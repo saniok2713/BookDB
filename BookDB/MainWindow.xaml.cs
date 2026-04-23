@@ -20,5 +20,17 @@ namespace BookDB
         {
             InitializeComponent();
         }
+
+        private void AddBook(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void DeleteBook(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void UpdateBook(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
