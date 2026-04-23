@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookDB {
+﻿namespace BookDB {
     internal class Book {
         public string Titolo { get; set; }
         public string Autore { get; set; }

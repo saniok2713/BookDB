@@ -1,5 +1,4 @@
-﻿
-namespace BookDB {
+﻿namespace BookDB {
     internal interface IBookRepository {
         void Add(Book book);
         void Delete(Book book);
