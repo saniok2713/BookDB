@@ -18,7 +18,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            
+
             <StackPanel Grid.Row="0">
                 <Grid Margin="0.5">
                     <Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Titolo:" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                    <TextBox Name="titolo" Grid.Column="1" Width="150" Height="20"/>
                 </Grid>
                 <Grid Margin="0.5">
                     <Grid.ColumnDefinitions>
@@ -34,7 +34,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Autore:" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                    <TextBox Name="autore" Grid.Column="1" Width="150" Height="20"/>
                 </Grid>
                 <Grid Margin="0.5">
                     <Grid.ColumnDefinitions>
@@ -42,7 +42,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Anno:" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                    <TextBox Name="anno" Grid.Column="1" Width="150" Height="20"/>
                 </Grid>
                 <Grid Margin="0.5">
                     <Grid.ColumnDefinitions>
@@ -50,40 +50,27 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Content="Pagine:" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Width="150" Height="20"/>
-                </Grid>
-                <Grid Margin="0.5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Content="Lingua:" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Width="150" Height="20"/>
+                    <TextBox Name="pagine" Grid.Column="1" Width="150" Height="20"/>
                 </Grid>
             </StackPanel>
 
-            
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="80"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Content="Add" Grid.Column="0" Margin="2" Click="AddBook"/>
-                    <Button Content="Delete" Grid.Column="1" Margin="2" Click="DeleteBook"/>
-                    <Button Content="Update" Grid.Column="2" Margin="2" Click="UpdateBook"/>
-                </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Add" Grid.Column="0" Margin="2" Click="AddBook"/>
+                <Button Content="Delete" Grid.Column="1" Margin="2" Click="DeleteBook"/>
+                <Button Content="Update" Grid.Column="2" Margin="2" Click="UpdateBook"/>
+                <Button Content="Refresh" Grid.Column="3" Margin="2" Click="RefreshList"/>
             </Grid>
+        </Grid>
 
         <StackPanel Grid.Column="1" Margin="10">
-            <DataGrid>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Titolo" Binding="{Binding Nome}" Width="*"/>
-                    <DataGridTextColumn Header="Autore" Binding="{Binding Autore}" Width="*"/>
-                    <DataGridTextColumn Header="Anno" Binding="{Binding Anno}" Width="80"/>
-                    <DataGridTextColumn Header="Pagine" Binding="{Binding Pagine}" Width="80"/>
-                    <DataGridTextColumn Header="Lingua" Binding="{Binding Lingua}" Width="100"/>
-                </DataGrid.Columns>
+            <DataGrid Name="dataGrid">
             </DataGrid>
         </StackPanel>
 

@@ -1,9 +1,9 @@
 ﻿namespace BookDB {
-    internal class Book {
+    internal class Book{
         public string Titolo { get; set; }
         public string Autore { get; set; }
-        public int Pagine { get; set; }
-        public DateOnly Data { get; set; }
+        public string Pagine { get; set; }
+        public string Data { get; set; }
 
     }
 }
