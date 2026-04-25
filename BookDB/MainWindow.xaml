@@ -70,7 +70,7 @@
         </Grid>
 
         <StackPanel Grid.Column="1" Margin="10">
-            <DataGrid Name="dataGrid">
+            <DataGrid Name="dataGrid" SelectionChanged="dataGrid_SelectionChanged">
             </DataGrid>
         </StackPanel>
 

@@ -15,5 +15,14 @@
         public List<Book> GetAllBooks() {
             return bookRepository.GetAll();
         }
+
+        public void DeleteBook(string titolo) {
+            bookRepository.Delete(titolo);
+        }
+
+        public void UpdateBook(string titolo, string autore, string anno, string pagine,string vecchioTitolo) {
+            Book book = new Book { Titolo = titolo, Autore = autore, Data = anno, Pagine = pagine };
+            bookRepository.Update(book,vecchioTitolo);
+        }
     }
 }

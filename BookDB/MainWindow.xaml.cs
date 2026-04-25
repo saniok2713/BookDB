@@ -9,7 +9,8 @@ namespace BookDB {
     public partial class MainWindow : Window {
         BookService bookService = new BookService();
         ObservableCollection<Book> books;
-
+        Book book;
+        string vecchioTitolo;
         public MainWindow() {
             InitializeComponent();
             LoadBooks();
@@ -25,11 +26,21 @@ namespace BookDB {
         }
 
         private void DeleteBook(object sender, RoutedEventArgs e) {
+            try {
+                book = dataGrid.SelectedItem as Book;
+                string titolo = book.Titolo;
+                bookService.DeleteBook(titolo);
+                LoadBooks();
+            }
+            catch {
+                MessageBox.Show("I campi da eliminare sono vuoiti");
+            }
 
         }
 
         private void UpdateBook(object sender, RoutedEventArgs e) {
-
+            bookService.UpdateBook(titolo.Text, autore.Text, anno.Text, pagine.Text,vecchioTitolo);
+            LoadBooks();
         }
 
         private void LoadBooks() {
@@ -39,6 +50,17 @@ namespace BookDB {
 
         private void RefreshList(object sender, RoutedEventArgs e) {
             LoadBooks();
+        }
+
+        private void dataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
+            if (dataGrid.SelectedItem == null)
+                return;
+            book = dataGrid.SelectedItem as Book;
+            titolo.Text = book.Titolo;
+            autore.Text = book.Autore;
+            anno.Text = book.Data;
+            pagine.Text = book.Pagine;
+            vecchioTitolo = book.Titolo;
         }
     }
 }
