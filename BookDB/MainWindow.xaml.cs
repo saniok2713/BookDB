@@ -10,7 +10,6 @@ namespace BookDB {
         BookService bookService = new BookService();
         ObservableCollection<Book> books;
         Book book;
-        string vecchioTitolo;
         public MainWindow() {
             InitializeComponent();
             LoadBooks();
@@ -28,8 +27,8 @@ namespace BookDB {
         private void DeleteBook(object sender, RoutedEventArgs e) {
             try {
                 book = dataGrid.SelectedItem as Book;
-                string titolo = book.Titolo;
-                bookService.DeleteBook(titolo);
+                int id = book.ID;
+                bookService.DeleteBook(id);
                 LoadBooks();
             }
             catch {
@@ -39,7 +38,13 @@ namespace BookDB {
         }
 
         private void UpdateBook(object sender, RoutedEventArgs e) {
-            bookService.UpdateBook(titolo.Text, autore.Text, anno.Text, pagine.Text,vecchioTitolo);
+            try {
+                book = dataGrid.SelectedItem as Book;
+                bookService.UpdateBook(titolo.Text, autore.Text, anno.Text, pagine.Text, book.ID);
+            }
+            catch {
+
+            }
             LoadBooks();
         }
 
@@ -60,7 +65,6 @@ namespace BookDB {
             autore.Text = book.Autore;
             anno.Text = book.Data;
             pagine.Text = book.Pagine;
-            vecchioTitolo = book.Titolo;
         }
     }
 }

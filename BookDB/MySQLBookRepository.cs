@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Windows;
 
 namespace BookDB {
     internal class MySQLBookRepository : IBookRepository {
@@ -30,7 +31,7 @@ namespace BookDB {
         }
 
 
-        public void Update(Book book,int id) {
+        public void Update(Book book, int id) {
             using (MySqlConnection connection = db.GetConnection()) {
                 connection.Open();
                 query = "UPDATE book SET titolo = @titolo, autore = @autore, data_pubblicazione = @anno, pagine = @pagine WHERE id=@id";
@@ -39,6 +40,7 @@ namespace BookDB {
                 cmd.Parameters.AddWithValue("@autore", book.Autore);
                 cmd.Parameters.AddWithValue("@anno", book.Data);
                 cmd.Parameters.AddWithValue("@pagine", book.Pagine);
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
             }
 
@@ -52,6 +54,7 @@ namespace BookDB {
                 using MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read()) {
                     Book book = new Book();
+                    book.ID = Convert.ToInt32(reader["id"]);
                     book.Titolo = reader["titolo"].ToString();
                     book.Autore = reader["autore"].ToString();
                     book.Pagine = reader["pagine"].ToString();

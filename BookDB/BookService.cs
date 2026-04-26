@@ -16,13 +16,13 @@
             return bookRepository.GetAll();
         }
 
-        public void DeleteBook(string titolo) {
-            bookRepository.Delete(titolo);
+        public void DeleteBook(int id) {
+            bookRepository.Delete(id);
         }
 
-        public void UpdateBook(string titolo, string autore, string anno, string pagine,string vecchioTitolo) {
-            Book book = new Book { Titolo = titolo, Autore = autore, Data = anno, Pagine = pagine };
-            bookRepository.Update(book,vecchioTitolo);
+        public void UpdateBook(string titolo, string autore, string anno, string pagine,int id) {
+            Book book = new Book {Titolo = titolo, Autore = autore, Data = anno, Pagine = pagine };
+            bookRepository.Update(book,id);
         }
     }
 }
