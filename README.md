@@ -1,7 +1,7 @@
 A simple programm, just for fun of books DB using MySQL
 
 First run this in MySQL:
------------------------------------------------
+
 DROP DATABASE IF EXISTS bookDB;
 CREATE DATABASE bookDB;
 USE BookDB;
@@ -13,4 +13,3 @@ CREATE TABLE book(
     pagine VARCHAR(15) NOT NULL,
     data_pubblicazione VARCHAR(6) NOT NULL
 );
-------------------------------------------------
