@@ -5,6 +5,5 @@
         public string Autore { get; set; }
         public string Pagine { get; set; }
         public string Data { get; set; }
-
     }
 }

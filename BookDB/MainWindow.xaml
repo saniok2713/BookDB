@@ -62,15 +62,15 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Add" Grid.Column="0" Margin="2" Click="AddBook"/>
-                <Button Content="Delete" Grid.Column="1" Margin="2" Click="DeleteBook"/>
-                <Button Content="Update" Grid.Column="2" Margin="2" Click="UpdateBook"/>
-                <Button Content="Refresh" Grid.Column="3" Margin="2" Click="RefreshList"/>
+                <Button Content="Add" Grid.Column="0" Margin="3" Click="AddBook"/>
+                <Button Content="Delete" Grid.Column="1" Margin="3" Click="DeleteBook"/>
+                <Button Content="Update" Grid.Column="2" Margin="3" Click="UpdateBook"/>
+                <Button Content="Refresh" Grid.Column="3" Margin="3" Click="RefreshList"/>
             </Grid>
         </Grid>
 
         <StackPanel Grid.Column="1" Margin="10">
-            <DataGrid Name="dataGrid" SelectionChanged="dataGrid_SelectionChanged">
+            <DataGrid Name="dataGrid" SelectionChanged="SelectItemDataGrid">
             </DataGrid>
         </StackPanel>
 

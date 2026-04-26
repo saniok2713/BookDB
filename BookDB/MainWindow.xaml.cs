@@ -55,11 +55,21 @@ namespace BookDB {
 
         private void RefreshList(object sender, RoutedEventArgs e) {
             LoadBooks();
+            titolo.Clear();
+            autore.Clear();
+            pagine.Clear();
+            anno.Clear();
         }
 
-        private void dataGrid_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
-            if (dataGrid.SelectedItem == null)
+        private void SelectItemDataGrid(object sender, System.Windows.Controls.SelectionChangedEventArgs e) {
+            if (dataGrid.SelectedItem as Book == null) {
+                titolo.Clear();
+                autore.Clear();
+                pagine.Clear();
+                anno.Clear();
                 return;
+            }
+               
             book = dataGrid.SelectedItem as Book;
             titolo.Text = book.Titolo;
             autore.Text = book.Autore;

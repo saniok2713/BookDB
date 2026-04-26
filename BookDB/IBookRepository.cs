@@ -2,8 +2,7 @@
     internal interface IBookRepository {
         void Add(Book book);
         void Delete(int id);
-        void Update(Book book,int id);
-        List<Book> GetAll(); 
-
+        void Update(Book book, int id);
+        List<Book> GetAll();
     }
 }
