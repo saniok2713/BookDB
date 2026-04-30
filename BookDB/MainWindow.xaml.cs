@@ -34,7 +34,6 @@ namespace BookDB {
             catch {
                 MessageBox.Show("I campi da eliminare sono vuoiti");
             }
-
         }
 
         private void UpdateBook(object sender, RoutedEventArgs e) {
