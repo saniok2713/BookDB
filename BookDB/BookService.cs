@@ -24,5 +24,9 @@
             Book book = new Book { Titolo = titolo, Autore = autore, Data = anno, Pagine = pagine };
             bookRepository.Update(book, id);
         }
+
+        public List<Book> GetBook(string nomeLibro) {
+            return bookRepository.FindBook(nomeLibro);
+        }
     }
 }

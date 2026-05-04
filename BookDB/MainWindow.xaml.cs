@@ -68,12 +68,24 @@ namespace BookDB {
                 anno.Clear();
                 return;
             }
-               
+
             book = dataGrid.SelectedItem as Book;
             titolo.Text = book.Titolo;
             autore.Text = book.Autore;
             anno.Text = book.Data;
             pagine.Text = book.Pagine;
+        }
+
+
+        private void SearchBook(object sender, RoutedEventArgs e) {
+            string libro = titolo.Text;
+            books = new ObservableCollection<Book>(bookService.GetBook(libro));
+            if (books.Count == 0) {
+                MessageBox.Show("Not found!");
+            }
+            else {
+                dataGrid.ItemsSource = books;
+            }
         }
     }
 }
